@@ -15,7 +15,7 @@
     <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=M9XRCSPYSMBCA&source=url"><img src="https://img.shields.io/badge/Donate-PayPal-green.svg?style=flat-square" alt="Donate"></a>
 </p>
 
-<strong>NOTE: I no longer support this project, I don't even have the means to compile new versions anymore as I'm on Linux and this project is Windows-only. I may answer GitHub issues, but don't expect further updates unless you're willing to take on maintenance yourself.</strong>
+<strong>NOTE: Arduano(Zenith-MIDI's owner) no longer support this project, this is the fork of Arduano's Zenith-MIDI.</strong>
 
 ## Features
 - Much better performance than any other midi renderer currently out there, and extremely RAM optimised!
@@ -49,10 +49,3 @@ After downloading the app, extract the .zip archive and run the program. If FFmp
 
 ## License
 Zenith is licensed under the terms of the [Don't Be a Dick Public License](https://github.com/arduano/Zenith-MIDI/blob/master/LICENSE).
-
-## Screenshots
-| ![](https://arduano.github.io/Zenith-MIDI/dist/bmr/assets/plugins/classic.png) |   ![](https://arduano.github.io/Zenith-MIDI/dist/bmr/assets/plugins/flat.png)    |
-| :----------------------------------------------------------------------------: | :------------------------------------------------------------------------------: |
-|                                 Classic plugin                                 |                                   Flat plugin                                    |
-|   ![](https://arduano.github.io/Zenith-MIDI/dist/bmr/assets/plugins/pfa.png)   | ![](https://arduano.github.io/Zenith-MIDI/dist/bmr/assets/plugins/miditrail.png) |
-|                                  PFA+ plugin                                   |                                MidiTrail+ plugin                                 |
