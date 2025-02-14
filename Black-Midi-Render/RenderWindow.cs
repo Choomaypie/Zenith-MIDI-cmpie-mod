@@ -270,12 +270,12 @@ void main()
                     " -f rawvideo -s " + settings.width / settings.downscale + "x" + settings.height / settings.downscale +
                     " -strict -2" +
                     " -pix_fmt rgb32 -r " + settings.fps + " -i -" +
-                    " -vf vflip -pix_fmt yuv420p ";
+                    " -vf vflip ";
                 args += settings.CustomFFmpeg ? "" : "-vcodec libx264";
             }
             if (settings.useBitrate)
             {
-                args += " -b:v " + settings.bitrate + "k" +
+                args += " -pix_fmt yuv420p -b:v " + settings.bitrate + "k" +
                     " -maxrate " + settings.bitrate + "k" +
                     " -minrate " + settings.bitrate + "k";
             }
@@ -285,9 +285,17 @@ void main()
             }
             else
             {
-                args += " -preset " + settings.crfPreset + " -crf " + settings.crf;
+                if (settings.crf > 0)
+                {
+                    args += " -pix_fmt yuv420p -preset " + settings.crfPreset + " -crf " + settings.crf;
+                }
+                else
+                {
+                    args += " -pix_fmt yuv444p -profile:v high444 -preset " + settings.crfPreset + " -qp " + settings.crf;
+                }
             }
             args += " -y \"" + path + "\"";
+            Console.WriteLine("ffmpeg command is: {0}.", args);
             ffmpeg.StartInfo = new ProcessStartInfo("ffmpeg", args);
             ffmpeg.StartInfo.RedirectStandardInput = true;
             ffmpeg.StartInfo.UseShellExecute = false;
